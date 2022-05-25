@@ -5,7 +5,8 @@
   "main": "index.js",
   "typings": "types/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pre-commit-hook": "./scripts/check_tsc.sh"
   },
   "author": "Tulip Protocol",
   "license": "ISC",
@@ -29,8 +30,12 @@
     "eslint-plugin-jsdoc": "^36.1.0",
     "eslint-plugin-lodash": "^7.3.0",
     "eslint-plugin-security": "^1.4.0",
+    "pre-commit": "^1.2.2",
     "typescript": "^4.4.4"
   },
+  "pre-commit": [
+    "pre-commit-hook"
+  ],
   "eslintConfig": {
     "extends": [
       "react-app",
